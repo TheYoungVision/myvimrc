@@ -68,7 +68,6 @@ set tm=500
 set expandtab
 set smarttab
 set number
-set wrap
 
 set shiftwidth=2
 set tabstop=4
@@ -98,3 +97,6 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" NERDTree mapping to Control-N
+map <C-n> :NERDTreeToggle<CR>
