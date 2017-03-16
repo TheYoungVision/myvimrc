@@ -35,6 +35,10 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'lumiliet/vim-twig'
 
+" React
+Plugin 'jbgutierrez/vim-babel'
+Plugin 'mattn/webapi-vim'
+
 call vundle#end()
 filetype plugin indent on
 
