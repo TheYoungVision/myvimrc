@@ -36,8 +36,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'lumiliet/vim-twig'
 
 " React
-Plugin 'jbgutierrez/vim-babel'
-Plugin 'mattn/webapi-vim'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 filetype plugin indent on
