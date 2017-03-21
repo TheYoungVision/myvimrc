@@ -28,6 +28,7 @@ Plugin 'mattn/emmet-vim'
 
 " Coloschemes
 Plugin 'morhetz/gruvbox'
+Plugin 'joshdick/onedark.vim'
 
 " Web
 Plugin 'othree/html5.vim'
@@ -81,7 +82,7 @@ set si "Smart indent
 " Syntax color
 syntax on
 set background=dark
-colorscheme gruvbox
+colorscheme onedark
 
 " Web
 let php_sql_query = 1 " Coloration requetes SQL
@@ -103,3 +104,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " NERDTree mapping to Control-N
 map <C-n> :NERDTreeToggle<CR>
+
+" ==============================================> Plugin
+" Use vim-jsx with simple js files
+let g:jsx_ext_required = 0
