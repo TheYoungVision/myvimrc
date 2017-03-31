@@ -4,6 +4,7 @@
 " Required
 set nocompatible
 filetype off
+set hidden
 set rtp+=~/.vim/bundle/Vundle.vim
 
 " =============================================================== Plugin
@@ -17,7 +18,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
+Plugin 'vim-scripts/LustyExplorer'
 
 " Completition
 Plugin 'valloric/youcompleteme'
@@ -31,13 +33,19 @@ Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 
 " Web
+Plugin 'tpope/vim-haml'
 Plugin 'othree/html5.vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'lumiliet/vim-twig'
+Plugin 'maksimr/vim-jsbeautify'
 
 " React
 Plugin 'mxw/vim-jsx'
+
+" status bar
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin indent on
@@ -105,6 +113,26 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " NERDTree mapping to Control-N
 map <C-n> :NERDTreeToggle<CR>
 
+" Map js-beautify to Ctrl - f
+map <c-f> :call JsBeautify()<cr>
+
 " ==============================================> Plugin
 " Use vim-jsx with simple js files
 let g:jsx_ext_required = 0
+
+" syntastic recommend config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" =============================================> Airline
+" set theme
+let g:airline_theme='simple'
+
+" Make appear the bar
+set laststatus=2
