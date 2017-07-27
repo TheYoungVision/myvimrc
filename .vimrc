@@ -16,6 +16,7 @@ Plugin 'gmarik/Vundle.vim'
 " General
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 " Plugin 'kien/ctrlp.vim'
@@ -31,6 +32,8 @@ Plugin 'mattn/emmet-vim'
 " Coloschemes
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
+Plugin 'chriskempson/base16-vim'
+Plugin 'roosta/srcery'
 
 " Web
 Plugin 'tpope/vim-haml'
@@ -79,7 +82,7 @@ set tm=500
 " Tab indent and other
 set expandtab
 set smarttab
-set number
+set relativenumber
 
 set shiftwidth=2
 set tabstop=4
@@ -90,7 +93,7 @@ set si "Smart indent
 " Syntax color
 syntax on
 set background=dark
-colorscheme onedark
+colorscheme srcery
 
 " Web
 let php_sql_query = 1 " Coloration requetes SQL
@@ -117,6 +120,8 @@ map <C-n> :NERDTreeToggle<CR>
 map <c-f> :call JsBeautify()<cr>
 
 " ==============================================> Plugin
+" base16 required
+let base16colorspace=256
 " Use vim-jsx with simple js files
 let g:jsx_ext_required = 0
 
@@ -130,7 +135,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_javascript_checkers = ['standard']
+let g:syntastic_javascript_checkers = ['eslint', 'standard']
+let g:syntastic_cpp_checkers = ['avrgcc']
 
 " =============================================> Airline
 " set theme
