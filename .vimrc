@@ -6,7 +6,6 @@ set nocompatible
 filetype off
 set hidden
 set rtp+=~/.vim/bundle/Vundle.vim
-
 " =============================================================== Plugin
 call vundle#begin()
 
@@ -19,11 +18,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
-" Plugin 'kien/ctrlp.vim'
-Plugin 'vim-scripts/LustyExplorer'
+Plugin 'kien/ctrlp.vim'
 
 " Completition
-Plugin 'valloric/youcompleteme'
+Plugin 'Shougo/deoplete.nvim'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'raimondi/delimitmate'
@@ -42,11 +40,13 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'lumiliet/vim-twig'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'tpope/vim-rails'
 
 " React
 Plugin 'mxw/vim-jsx'
 
-" status bar
+" Status bar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -82,6 +82,7 @@ set tm=500
 " Tab indent and other
 set expandtab
 set smarttab
+set number
 set relativenumber
 
 set shiftwidth=2
@@ -93,21 +94,18 @@ set si "Smart indent
 " Syntax color
 syntax on
 set background=dark
-colorscheme srcery
+colorscheme gruvbox
 
 " Web
 let php_sql_query = 1 " Coloration requetes SQL
 let php_htmlInStrings = 1 "Coloration balises HTML
 
 "====================================================> Mapping
+" Map jk on escape
+imap jk <Esc>
 " CtrlP mapping to Control-p
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-
-" YCM match with ultisnips
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
 
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -132,15 +130,22 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint', 'standard']
 let g:syntastic_cpp_checkers = ['avrgcc']
 
-" =============================================> Airline
-" set theme
-let g:airline_theme='simple'
+" CtrlP {{{
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" }}}
 
-" Make appear the bar
+" Vim Airline {{{
 set laststatus=2
+let g:airline_theme='minimalist'
+" }}}
+
+" Deoplete {{{
+call deoplete#enable()
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
